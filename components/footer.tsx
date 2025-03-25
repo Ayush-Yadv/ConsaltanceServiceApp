@@ -3,7 +3,7 @@ import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "luc
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6">
+    <footer className="bg-gray-900 text-white pt-12 pb-12">
       <div className="w-full px-4 md:px-8 lg:px-12">
         {/* Main footer content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -124,7 +124,7 @@ const quickLinks = [
 ]
 
 const services = [
-  { label: "Company Registration", href: "/service/company-registration" },
+  { label: "Company Registration", href: "/service/business-registration" },
   { label: "GST Registration", href: "/service/gst-registration" },
   { label: "Trademark Registration", href: "/service/trademark-registration" },
   { label: "Income Tax Filing", href: "/service/income-tax-return" },
