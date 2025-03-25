@@ -121,7 +121,7 @@ function getServiceStyle(slug: string): string {
   }
 
   // Default fallback
-  return "default";
+  return "home";
 }
 
 export default async function ServicePage({ params }: { params: { slug: string } }) {
@@ -151,6 +151,8 @@ export default async function ServicePage({ params }: { params: { slug: string }
     return <Style2ServicePage params={resolvedParams} />;
   } else if (style === "style3") {
     return <Style3ServicePage params={resolvedParams} />;
+  } else if (style === "default") {
+    return <DefaultServicePage params={resolvedParams} />;
   } else {
     // Default behavior (renders the content from [service]/page.tsx)
     return (

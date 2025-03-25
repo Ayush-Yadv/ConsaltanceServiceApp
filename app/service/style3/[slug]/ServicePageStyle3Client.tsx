@@ -74,7 +74,7 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
-                  className="bg-primary hover:bg-primary/90 text-white"
+                  className="bg-black hover:bg-black/50 text-white transition-transform duration-300 transform hover:scale-105"
                   onClick={() => {
                     const form = document.querySelector("form")
                     if (form) {
@@ -85,7 +85,7 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
                   Get Started
                 </Button>
                 <Link href="/pricing">
-                  <Button variant="outline" className="border-white text-white hover:bg-white/10 text-white">
+                  <Button variant="outline" className="border-black text-black hover:bg-black/10/text-black transition-transform duration-300 transform hover:scale-105">
                     View Pricing
                   </Button>
                 </Link>
@@ -400,7 +400,7 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
               onClick={() => {
                 const form = document.querySelector("form")
                 if (form) {
-                  form.scrollIntoView({ behavior: "smooth" })
+                  form.scrollIntoView({ behavior: "smooth" , block: "start" })
                 }
               }}
             >
