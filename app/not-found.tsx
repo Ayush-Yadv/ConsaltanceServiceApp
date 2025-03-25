@@ -55,7 +55,7 @@ export default function NotFound() {
               { name: "Services", href: "/services" },
               { name: "Pricing", href: "/pricing" },
               { name: "Contact", href: "/coming-soon?service=Contact" },
-              { name: "Company Registration", href: "/service/company-registration" },
+              { name: "Company Registration", href: "/service/business-registration" },
               { name: "GST Registration", href: "/service/gst-registration" },
               { name: "Trademark Registration", href: "/service/trademark-registration" },
               { name: "Legal Documentation", href: "/service/legal-documentation" },
@@ -79,7 +79,7 @@ export default function NotFound() {
               {
                 title: "Company Registration",
                 description: "Register your business as Private Limited, LLP, OPC or Partnership Firm.",
-                href: "/service/company-registration",
+                href: "/service/business-registration",
               },
               {
                 title: "GST Registration",
