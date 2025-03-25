@@ -1342,5 +1342,153 @@ export const servicesData = [
       "Quick Turnaround Time",
     ],
   },
+  {
+      slug: "legal-consultation",
+      title: "Legal Consultation",
+      description: "Get expert legal advice tailored to your business or personal needs. Resolve legal uncertainties with professional guidance.",
+      metaTitle: "Legal Consultation Services in India | Business & Personal Legal Advice",
+      metaDescription: "Consult experienced legal professionals for business or personal legal matters. Get clarity and strategic advice today.",
+      bannerImage: "/placeholder.svg?height=600&width=1200&text=Legal Consultation",
+      benefits: [
+        "Expert Advice on Legal Matters",
+        "Clarification of Legal Rights & Obligations",
+        "Risk Assessment & Mitigation Strategies",
+        "Personalized Legal Solutions",
+        "Cost-Effective Preliminary Guidance"
+      ],
+      whyChooseUs: [
+        "Experienced Lawyers Across Domains",
+        "Confidential & Professional Consultations",
+        "Clear & Practical Legal Advice",
+        "Quick Appointment Scheduling"
+      ]
+    
+  },
+  {
+    slug: "contract-review",
+    title: "Contract Review",
+    description: "Ensure your contracts are legally sound and protect your interests with a professional contract review service.",
+    metaTitle: "Contract Review Services in India | Legal Contract Analysis",
+    metaDescription: "Get your contracts reviewed by legal experts to avoid risks and ensure compliance. Secure your business agreements today.",
+    bannerImage: "/placeholder.svg?height=600&width=1200&text=Contract Review",
+    benefits: [
+      "Identify Hidden Risks & Loopholes",
+      "Ensure Compliance with Laws",
+      "Clarify Terms & Obligations",
+      "Prevent Future Disputes",
+      "Negotiation Support"
+    ],
+    whyChooseUs: [
+      "Specialized Contract Lawyers",
+      "Detailed & Thorough Analysis",
+      "Fast Turnaround Time",
+      "Practical Recommendations"
+    ]
+  },
+  {
+    slug: "due-diligence",
+    title: "Due Diligence",
+    description: "Comprehensive legal, financial, and operational due diligence services for businesses, investments, and mergers.",
+    metaTitle: "Due Diligence Services in India | Business & Legal Verification",
+    metaDescription: "Professional due diligence to assess risks, compliance, and valuation before business decisions. Get expert analysis now.",
+    bannerImage: "/placeholder.svg?height=600&width=1200&text=Due Diligence",
+    benefits: [
+      "Risk Identification & Mitigation",
+      "Legal & Financial Compliance Check",
+      "In-Depth Business Valuation",
+      "Informed Decision-Making",
+      "Transaction Safety Assurance"
+    ],
+    whyChooseUs: [
+      "Experienced Due Diligence Team",
+      "Multi-Disciplinary Approach",
+      "Customized Reporting",
+      "Strict Confidentiality"
+    ]
+  },
+  {
+    slug: "consumer-complaint",
+    title: "Consumer Complaint",
+    description: "File a strong consumer complaint to resolve disputes with sellers, service providers, or manufacturers effectively.",
+    metaTitle: "Consumer Complaint Services in India | Legal Consumer Protection",
+    metaDescription: "Expert assistance in filing consumer complaints for defective products, poor services, or unfair trade practices. Get justice now.",
+    bannerImage: "/placeholder.svg?height=600&width=1200&text=Consumer Complaint",
+    benefits: [
+      "Legal Recourse Against Unfair Practices",
+      "Compensation & Refund Claims",
+      "Formal Dispute Resolution",
+      "Consumer Rights Protection",
+      "Fast-Track Legal Support"
+    ],
+    whyChooseUs: [
+      "Expert Consumer Lawyers",
+      "High Success Rate in Resolutions",
+      "End-to-End Legal Support",
+      "Affordable Complaint Filing"
+    ]
+  },
+  {
+    slug: "cheque-bounce",
+    title: "Cheque Bounce",
+    description: "Take legal action against cheque bounce cases under Section 138 of the Negotiable Instruments Act.",
+    metaTitle: "Cheque Bounce Legal Services in India | Recovery & Penalties",
+    metaDescription: "Expert legal help for cheque bounce cases. Recover dues and enforce penalties against defaulters. Consult now.",
+    bannerImage: "/placeholder.svg?height=600&width=1200&text=Cheque Bounce",
+    benefits: [
+      "Legal Notice & Recovery Process",
+      "Criminal & Civil Remedies",
+      "Monetary Compensation Claims",
+      "Fast Resolution of Disputes",
+      "Deterrence Against Fraud"
+    ],
+    whyChooseUs: [
+      "Specialized Cheque Bounce Lawyers",
+      "Strong Legal Documentation",
+      "High Success Rate in Recovery",
+      "Timely Court Proceedings"
+    ]
+  },
+  {
+    slug: "property-disputes",
+    title: "Property Disputes",
+    description: "Resolve property disputes, including ownership conflicts, inheritance issues, and illegal possession cases.",
+    metaTitle: "Property Dispute Lawyers in India | Legal Resolution Services",
+    metaDescription: "Expert legal assistance for property disputes, title conflicts, and land litigation. Protect your property rights today.",
+    bannerImage: "/placeholder.svg?height=600&width=1200&text=Property Disputes",
+    benefits: [
+      "Clear Ownership & Title Verification",
+      "Legal Notice & Litigation Support",
+      "Inheritance & Partition Dispute Resolution",
+      "Protection Against Fraudulent Claims",
+      "Court & Out-of-Court Settlements"
+    ],
+    whyChooseUs: [
+      "Experienced Property Lawyers",
+      "Strong Documentation & Evidence Handling",
+      "Strategic Legal Approach",
+      "Timely Case Resolution"
+    ]
+  },
+  {
+    slug: "debt-recovery",
+    title: "Debt Recovery",
+    description: "Efficient legal solutions for recovering unpaid debts from individuals or businesses through lawful means.",
+    metaTitle: "Debt Recovery Services in India | Legal Loan Recovery Assistance",
+    metaDescription: "Professional debt recovery services to reclaim unpaid dues via legal notices, negotiations, or litigation. Act now.",
+    bannerImage: "/placeholder.svg?height=600&width=1200&text=Debt Recovery",
+    benefits: [
+      "Legal Notices & Demand Letters",
+      "Negotiation & Settlement Support",
+      "Filing Recovery Suits When Needed",
+      "Attachment of Assets (If Required)",
+      "Fast & Effective Recovery Process"
+    ],
+    whyChooseUs: [
+      "Expert Debt Recovery Lawyers",
+      "Aggressive Yet Legal Approach",
+      "High Success Rate in Recoveries",
+      "Transparent Fee Structure"
+    ]
+  },
 ]
 

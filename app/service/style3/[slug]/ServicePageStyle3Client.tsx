@@ -10,6 +10,7 @@ import { BsWhatsapp } from "react-icons/bs"
 import { servicesData } from "@/lib/services-data"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import TestimonialsSection from "@/components/testimonials-section"
 
 // Import the animated components
 import AnimatedBenefitsSection from "@/components/animated-benefits-section"
@@ -24,6 +25,17 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
   const service = servicesData.find((service) => service.slug === params.slug)
   const containerRef = useRef(null)
   const isInView = useInView(containerRef, { once: true, amount: 0.1 })
+
+  const overviewRef = useRef<HTMLDivElement | null>(null);
+  const benefitsRef = useRef<HTMLDivElement | null>(null);
+  const processRef = useRef<HTMLDivElement | null>(null);
+  const faqRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToSection = (ref: React.MutableRefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
   // If service not found, return 404
   if (!service) {
@@ -116,10 +128,10 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <button className="px-6 py-3 font-medium text-primary border-b-2 border-primary">Overview</button>
-            <button className="px-6 py-3 font-medium text-gray-500 hover:text-gray-700">Benefits</button>
-            <button className="px-6 py-3 font-medium text-gray-500 hover:text-gray-700">Process</button>
-            <button className="px-6 py-3 font-medium text-gray-500 hover:text-gray-700">FAQ</button>
+            <button onClick={() => scrollToSection(overviewRef)} className="px-6 py-3 font-medium text-primary border-b-2 border-primary">Overview</button>
+            <button onClick={() => scrollToSection(benefitsRef)} className="px-6 py-3 font-medium text-gray-500 hover:text-gray-700">Benefits</button>
+            <button onClick={() => scrollToSection(processRef)} className="px-6 py-3 font-medium text-gray-500 hover:text-gray-700">Process</button>
+            <button onClick={() => scrollToSection(faqRef)} className="px-6 py-3 font-medium text-gray-500 hover:text-gray-700">FAQ</button>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -131,7 +143,7 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               {/* Overview Section */}
-              <div className="mb-10">
+              <div ref={overviewRef} className="mb-10">
                 <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">{service.title} Overview</h2>
                 <div className="prose max-w-none mb-6">
                   <p className="text-gray-700 mb-4">{service.description}</p>
@@ -142,7 +154,7 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
                 </div>
 
                 {/* Benefits Cards */}
-                <div className="mt-8">
+                <div ref={benefitsRef} className="mt-8">
                   <h3 className="text-xl font-bold mb-6 text-gray-900">Key Benefits</h3>
                   <AnimatedBenefitsSection
                     benefits={service.benefits.map((benefit) => ({ text: benefit }))}
@@ -154,7 +166,7 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
               </div>
 
               {/* Process Section */}
-              <div className="mb-10">
+              <div ref={processRef} className="mb-10">
                 <h3 className="text-xl font-bold mb-6 text-gray-900">Our Process</h3>
                 <AnimatedProcessSection
                   steps={[
@@ -209,7 +221,7 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
               </div>
 
               {/* Add an FAQ section before the "Why Choose Us" section: */}
-              <div className="mb-10">
+              <div ref={faqRef} className="mb-10">
                 <h3 className="text-xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h3>
                 <AnimatedFAQSection
                   faqs={[
@@ -268,7 +280,7 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               {/* Contact Form */}
-              <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 mb-8 sticky top-24">
+              <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200 mb-8  ">
                 <div className="bg-primary text-white p-4 rounded-t-lg -mt-6 -mx-6 mb-6">
                   <h3 className="text-xl font-bold">Get {service.title}</h3>
                   <p className="text-sm text-white/80 mt-1">Fill the form for expert assistance</p>
@@ -343,7 +355,8 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
       </section>
 
       {/* Testimonials Section */}
-      <motion.section
+      <TestimonialsSection />
+      {/* <motion.section
         className="py-12 bg-gray-50"
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -380,7 +393,7 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
             ))}
           </div>
         </div>
-      </motion.section>
+      </motion.section> */}
 
       {/* CTA Section */}
       <motion.section
@@ -396,17 +409,26 @@ export default function ServicePageStyle3Client({ params }: ServicePageStyle3Cli
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              className="bg-white text-primary hover:bg-gray-100"
+              className="bg-white text-primary hover:bg-gray-100 transition-transform duration-300 transform hover:scale-105"
               onClick={() => {
                 const form = document.querySelector("form")
-                if (form) {
-                  form.scrollIntoView({ behavior: "smooth" , block: "start" })
-                }
+                    if (form) {
+                      form.scrollIntoView({ behavior: "smooth", block: "center" })
+                    }
               }}
             >
               Get Started Now
             </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button
+              variant="outline"
+              className="bg-white text-primary hover:bg-gray-100 transition-transform duration-300 transform hover:scale-105"
+              onClick={() => {
+                window.scrollTo({
+                top: 0, // Scrolls to the very top of the page
+                behavior: "smooth",
+              });
+            }}
+            >
               Learn More
             </Button>
           </div>

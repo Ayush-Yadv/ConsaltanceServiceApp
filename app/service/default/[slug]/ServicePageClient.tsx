@@ -86,14 +86,14 @@ export default function ServicePageClient({ params }: { params: { slug: string }
                   </svg>
                   <span className="text-sm font-medium">4.9/5 Rating</span>
                 </div>
-                <div className="flex items-center">
-                  <svg className="h-5 w-5 text-primary mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
+                <div className="flex items-center space-x-2">
+                  <svg className="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                   </svg>
                   <span className="text-sm font-medium">Quick Turnaround</span>
                 </div>

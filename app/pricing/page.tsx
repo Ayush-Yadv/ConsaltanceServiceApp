@@ -145,11 +145,11 @@ export default function PricingPage() {
                     Contact Us
                   </Button>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button variant="outline" className="border-white text-white hover:bg-white/10">
                     Learn More
                   </Button>
-                </motion.div>
+                </motion.div> */}
               </div>
             </motion.div>
             <motion.div

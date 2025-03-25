@@ -51,18 +51,41 @@ export default function ServicePageClient({ params }: { params: { slug: string }
           <div className="absolute inset-0 flex flex-col justify-center z-10 container mx-auto px-4">
             <div className="max-w-3xl">
               <div className="flex items-center text-sm text-white/80 mb-4">
-                <Link href="/" className="hover:text-white">
+                <Link href="/" className="text-black hover:text-primary">
                   Home
                 </Link>
                 <ChevronRight className="h-4 w-4 mx-1" />
-                <Link href="/services" className="hover:text-white">
+                <Link href="/services" className="text-black hover:text-primary">
                   Services
                 </Link>
                 <ChevronRight className="h-4 w-4 mx-1" />
-                <span className="text-white">{service.title}</span>
+                <span className="text-primary">{service.title}</span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">{service.title}</h1>
-              <p className="text-lg text-white/90 max-w-2xl">{service.description}</p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">{service.title}</h1>
+              <p className="text-base md:text-lg text-gray-700 mb-6 max-w-xl">{service.description}</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    //className="bg-black hover:bg-black/50 text-white transition-transform duration-300 transform hover:scale-105"
+                    className="bg-primary hover:bg-primary/90 text-white"
+                    onClick={() => {
+                      const form = document.querySelector("form")
+                      if (form) {
+                        form.scrollIntoView({ behavior: "smooth" , block: "center"})
+                      }
+                    }}
+                  > 
+                    Get Started
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link href="/pricing">
+                    <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 text-primary">
+                      View Pricing
+                    </Button>
+                  </Link>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -120,12 +143,12 @@ export default function ServicePageClient({ params }: { params: { slug: string }
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               {/* Contact Form */}
-              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 mb-8 sticky top-24">
+              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 mb-8">
                 <h3 className="text-xl font-bold mb-4 text-gray-900 border-b border-gray-200 pb-2">
                   Get {service.title}
                 </h3>
 
-                <form className="space-y-4 mt-6">
+                <form  className="space-y-4 mt-6">
                   <div>
                     <Input id="name" name="name" placeholder="Your Name" required />
                   </div>
@@ -343,20 +366,14 @@ export default function ServicePageClient({ params }: { params: { slug: string }
             Contact us today to learn more about our {service.title} services and how we can help your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              className="bg-white text-primary hover:bg-gray-100"
-              onClick={() => {
-                const form = document.querySelector("form")
-                if (form) {
-                  form.scrollIntoView({ behavior: "smooth" })
-                }
-              }}
-            >
+            <Link href="tel:+911234567890"> 
+            <Button className="bg-white text-primary hover:bg-gray-100 transition-transform duration-300 transform hover:scale-105" >
               Request a Callback
             </Button>
+            </Link>
             <Link href="/pricing">
-              <Button variant="outline" className="border-white text-white hover:bg-white/10 text-white">
-                View Pricing
+              <Button variant="outline" className="border-black text-black hover:bg-black/10/text-black transition-transform duration-300 transform hover:scale-105">
+                 View Pricing
               </Button>
             </Link>
           </div>

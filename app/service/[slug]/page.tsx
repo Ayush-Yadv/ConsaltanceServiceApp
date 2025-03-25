@@ -115,7 +115,14 @@ function getServiceStyle(slug: string): string {
     slug === "partnership-deed" ||
     slug === "llp-agreement" ||
     slug === "legal-notice" ||
-    slug === "legal-documentation"
+    slug === "legal-documentation"||
+    slug === "legal-consultation" ||
+    slug === "contract-review" ||
+    slug === "due-diligence" ||
+    slug === "consumer-complaint" ||
+    slug === "cheque-bounce" ||
+    slug === "property-disputes" ||
+    slug === "debt-recovery" 
   ) {
     return "style3";
   }
