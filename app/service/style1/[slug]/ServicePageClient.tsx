@@ -102,7 +102,7 @@ export default  function ServicePageClient({ params }: { params: { slug: string 
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link href="/pricing">
-                    <Button variant="outline" className="border-white text-white hover:bg-white/10 text-white">
+                  <Button variant= "outline" className="bg-white text-primary hover:bg-white/10">
                       View Pricing
                     </Button>
                   </Link>

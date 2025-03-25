@@ -111,7 +111,7 @@ export default function FeaturedServices() {
                       className="bg-primary hover:bg-primary/90 text-white text-sm md:text-base w-full"
                       onClick={(e) => {
                         e.preventDefault()
-                        router.push(`/service/${service.href.replace(/^\//, "")}`)
+                        router.push(`/service/${service.href}`)
                       }}
                     >
                       <motion.span
@@ -149,7 +149,7 @@ const featuredServices = [
   {
     title: "Company Registration",
     description: "Register your business as Private Limited, LLP, OPC or Partnership Firm with expert guidance.",
-    href: "/company-registration",
+    href: "/business-registration",
   },
   {
     title: "GST Registration",

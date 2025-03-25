@@ -132,27 +132,8 @@ export default function ServicesSection() {
                       Get Started
                       <ArrowRight className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </Button>
-                  </motion.div>
-                  <div className="flex flex-wrap gap-3">
-                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
-                      <Link
-                        href={service.href}
-                        className="text-primary font-medium hover:underline flex items-center text-sm md:text-base group"
-                      >
-                        Learn More
-                        <ArrowRight className="ml-1 h-3 w-3 md:h-4 md:w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </Link>
-                    </motion.div>
-                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
-                      <Link
-                        href="/pricing"
-                        className="text-gray-600 font-medium hover:underline flex items-center text-sm md:text-base group"
-                      >
-                        View Pricing
-                        <ArrowRight className="ml-1 h-3 w-3 md:h-4 md:w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </Link>
-                    </motion.div>
-                  </div>
+                 </motion.div>
+                          
                 </motion.div>
               </div>
             </motion.div>

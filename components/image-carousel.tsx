@@ -1,5 +1,6 @@
 "use client"
 
+import { useRouter } from "next/navigation"
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -12,6 +13,7 @@ export default function ImageCarousel() {
   const carouselRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: false, amount: 0.3 })
+  const router = useRouter()
 
   const carouselImages = [
     {
@@ -19,24 +21,29 @@ export default function ImageCarousel() {
       alt: "Business Services",
       title: "Comprehensive Business Solutions",
       description: "One-stop solution for all your business registration and compliance needs",
+      link: "/service/business-registration",
     },
     {
       src: "/placeholder.svg?height=600&width=1200&text=Tax Filing",
       alt: "Tax Filing",
       title: "Hassle-free Tax Filing",
       description: "Expert assistance for GST, Income Tax, and TDS filing",
+      link: "/service/tax-compliance",
+
     },
     {
       src: "/placeholder.svg?height=600&width=1200&text=Legal Services",
       alt: "Legal Services",
       title: "Professional Legal Services",
       description: "Legal documentation and compliance services for your business",
+      link: "/service/legal-services",
     },
     {
       src: "/placeholder.svg?height=600&width=1200&text=Trademark Registration",
       alt: "Trademark Registration",
       title: "Protect Your Brand Identity",
       description: "Secure your business name and logo with trademark registration",
+      link: "/service/trademark-registration",
     },
   ]
 
@@ -57,10 +64,10 @@ export default function ImageCarousel() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide()
-    }, 10000) // Changed to 10 seconds
+    }, 3000) // Changed to 10 seconds
 
     return () => clearInterval(interval)
-  }, [currentIndex])
+  }, [])
 
   const scrollToImage = (index: number) => {
     if (isAnimating) return
@@ -89,7 +96,7 @@ export default function ImageCarousel() {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.2 }}
               className="absolute inset-0"
             >
               <Image
@@ -115,7 +122,7 @@ export default function ImageCarousel() {
               key={`title-${currentIndex}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
             >
               {carouselImages[currentIndex].title}
             </motion.h2>
@@ -124,7 +131,7 @@ export default function ImageCarousel() {
               key={`desc-${currentIndex}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
             >
               {carouselImages[currentIndex].description}
             </motion.p>
@@ -133,15 +140,17 @@ export default function ImageCarousel() {
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
             >
               <Button
                 className="rounded-full bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg flex items-center gap-2"
                 onClick={() => {
-                  const contactForm = document.querySelector(".fixed-contact-form")
-                  if (contactForm) {
-                    contactForm.scrollIntoView({ behavior: "smooth" })
-                  }
+
+                  router.push(carouselImages[currentIndex].link)
+                  //const contactForm = document.querySelector(".fixed-contact-form")
+                  //if (contactForm) {
+                  //  contactForm.scrollIntoView({ behavior: "smooth" })
+                 // }
                 }}
               >
                 <ArrowRight className="h-5 w-5" />
